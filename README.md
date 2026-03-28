@@ -46,18 +46,23 @@ The website presents my background, projects, achievements, and contact informat
 
 ## Project Structure
 
+```
 project/
-│
 ├── index.html
 ├── css/
-│ └── style.css
+│   └── style.css
 ├── js/
-│ └── script.js
-└── assets/
-├── Me.jpg
-├── phys.jpg
-├── edad.jpg
-└── CalcAward.jpg
+│   └── script.js
+├── assets/
+│   ├── Me.jpg
+│   ├── phys.jpg
+│   ├── edad.jpg
+│   └── CalcAward.jpg
+├── docs/
+│   ├── ai-usage-report.md
+│   └── technical-documentation.md
+└── README.md
+```
 
 
 
