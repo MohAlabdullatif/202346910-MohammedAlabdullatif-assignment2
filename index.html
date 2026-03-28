@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">  
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Moe Website</title>
 </head>
 
-<body style="margin: 0; scroll-behavior: smooth;">
-
+<body>
     <!-- Header -->
     <header class="headerBar">
         <p>Moe Website</p>
@@ -18,11 +18,11 @@
             <a href="#achievements" class="headerItems">Achievements</a>
             <a href="#contact" class="headerItems">Contact Me</a>
         </nav>
-        <button id="themeToggle">Dark Mode</button>
+        <button id="themeToggle" type="button">Dark Mode</button>
     </header>
 
     <!-- About Me Section -->
-    <section id="aboutMe">
+    <section id="aboutMe" class="fade-in-section">
         <h1>About Me</h1>
         <div class="aboutMeCard">
             <img src="assets/Me.jpg" alt="Profile Image">
@@ -35,24 +35,40 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section id="projects" class="fade-in-section">
         <h2>Projects</h2>
-        <div class="sectionContent">
-            <div class="card">
+
+        <div class="projectsToolbar">
+            <label for="projectSearch" class="searchLabel">Search Projects</label>
+            <input
+                type="text"
+                id="projectSearch"
+                placeholder="Type to search projects..."
+                aria-label="Search projects"
+            >
+        </div>
+
+        <p id="projectFeedback" class="statusMessage infoMessage">
+            Showing all projects.
+        </p>
+
+        <div class="sectionContent" id="projectsList">
+            <div class="card project-card">
                 <h3>Text Sentiment Analysis</h3>
                 <p>
                     This project applies machine learning–based sentiment analysis to Twitter data by transforming raw tweets
                     into numerical features and training several classifiers to predict sentiment labels.
-                    Text is first cleaned and converted into vectors using Bag‑of‑Words and TF‑IDF.
+                    Text is first cleaned and converted into vectors using Bag-of-Words and TF-IDF.
                     Four algorithms are trained: Linear SVC, Complement Naive Bayes, Multinomial Naive Bayes, and Logistic Regression.
                     The experiments show performance depends on both the vectorizer and the classifier.
                 </p>
             </div>
-            <div class="card">
+
+            <div class="card project-card">
                 <h3>Exploratory Analysis of Flight Itineraries and Airfare Patterns</h3>
                 <p>
-                    Analyzed a large flight-pricing dataset with 670,000+ records, examining route characteristics, base fares, 
-                    segment durations, distances, and categorical fields like airlines, airports, and cabins. 
+                    Analyzed a large flight-pricing dataset with 670,000+ records, examining route characteristics, base fares,
+                    segment durations, distances, and categorical fields like airlines, airports, and cabins.
                     Computed descriptive statistics, distributions, and correlations to understand pricing patterns and itinerary structures.
                 </p>
             </div>
@@ -60,7 +76,7 @@
     </section>
 
     <!-- Achievements Section -->
-    <section id="achievements">
+    <section id="achievements" class="fade-in-section">
         <h2>Achievements</h2>
         <div class="sectionContent">
             <div class="card">
@@ -79,12 +95,29 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" class="fade-in-section">
         <h2>Contact Me</h2>
-        <div class="sectionContent">
+
+        <div class="sectionContent contactInfo">
             <div class="card"><strong>Email: Mohamadalabdullatif2005@gmail.com</strong></div>
             <div class="card"><strong>Phone: +966 568454698</strong></div>
         </div>
+
+        <form id="contactForm" class="contactForm" novalidate>
+            <h3>Send a Message</h3>
+
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your name">
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message"></textarea>
+
+            <button type="submit" class="submitBtn">Send Message</button>
+            <p id="formMessage" class="statusMessage" aria-live="polite"></p>
+        </form>
     </section>
 
     <!-- Footer -->
